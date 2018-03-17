@@ -17,6 +17,8 @@ server.route({
 
 // start the server
 const init = async () => {
+
+    // adds inert plugin to hapi application
   await server.register(require("inert"));
 
   server.route({
@@ -26,6 +28,7 @@ const init = async () => {
   });
 
   await server.start();
+
   console.log(`Server running at: ${server.info.uri}`);
 };
 
